@@ -1,7 +1,9 @@
 import React from 'react';
 import { MapPin } from 'lucide-react';
 
-const ServiceArea: React.FC = () => {
+// This is the reusable component version if needed, 
+// but the main content is now in pages/ServiceArea.tsx
+const ServiceAreaComponent: React.FC = () => {
   const cities = [
     "Raleigh", "Durham", "Cary", "Apex", "Morrisville", 
     "Wake Forest", "Garner", "Clayton", "Knightdale", 
@@ -9,27 +11,25 @@ const ServiceArea: React.FC = () => {
   ];
 
   return (
-    <div className="bg-zinc-900 rounded-xl p-8 border border-zinc-800">
+    <div className="bg-white rounded-xl p-8 border border-gray-100 shadow-sm">
       <div className="flex items-center gap-3 mb-6">
-        <div className="p-3 bg-wizard-red/10 rounded-full">
-          <MapPin className="w-6 h-6 text-wizard-red" />
-        </div>
-        <h2 className="text-2xl font-bold text-white">Proudly Serving the Entire RDU</h2>
+        <MapPin className="w-6 h-6 text-brand-orange" />
+        <h2 className="text-2xl font-bold text-brand-navy">Proudly Serving the Entire RDU</h2>
       </div>
       
       <div className="flex flex-wrap gap-2 mb-6">
         {cities.map((city) => (
-          <span key={city} className="bg-black border border-zinc-700 text-gray-300 px-3 py-1 rounded-full text-sm">
+          <span key={city} className="bg-brand-light text-brand-navy font-medium px-3 py-1 rounded-full text-sm">
             {city}
           </span>
         ))}
       </div>
       
-      <p className="text-gray-400 italic border-l-4 border-wizard-red pl-4">
+      <p className="text-gray-500 italic border-l-4 border-brand-orange pl-4">
         Note: Travel outside the RDU is available — fees quoted upfront based on distance.
       </p>
     </div>
   );
 };
 
-export default ServiceArea;
+export default ServiceAreaComponent;

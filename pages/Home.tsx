@@ -1,281 +1,148 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Clock, MapPin, Palette, Shield, ChevronRight, Camera, Phone, Wrench } from 'lucide-react';
+import { MessageCircle, Phone, Calendar, Clock, MapPin, ShieldCheck, ChevronRight, CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Button from '../components/Button';
 import { PHONE_HREF, SMS_HREF, PHONE_NUMBER } from '../types';
 
 const Home: React.FC = () => {
-  // Swifter animation settings
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } }
-  };
-
-  const stagger = {
-    visible: { transition: { staggerChildren: 0.08 } }
-  };
-
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center bg-black overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=1920" 
-            alt="Luxury car wheel" 
-            className="w-full h-full object-cover opacity-40 grayscale"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10 pt-10">
-          <motion.div 
-            initial="hidden"
-            animate="visible"
-            variants={stagger}
-            className="max-w-3xl"
-          >
-            <motion.div variants={fadeInUp} className="inline-block bg-wizard-red/20 border border-wizard-red/30 rounded-full px-4 py-1 mb-6 backdrop-blur-sm">
-              <span className="text-wizard-red font-bold text-sm tracking-wide uppercase">RDU's #1 Mobile Choice</span>
-            </motion.div>
-            <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
-              RDU’s Mobile <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-wizard-red to-orange-500">Rim Repair Specialists</span>
+      <section className="relative bg-white py-12 lg:py-24 overflow-hidden">
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-4xl md:text-6xl font-heading font-black text-brand-navy mb-4 leading-tight"
+            >
+              RDU’s Mobile <br/>
+              <span className="text-brand-orange">Rim Repair Specialists</span>
             </motion.h1>
-            <motion.p variants={fadeInUp} className="text-xl md:text-2xl text-gray-300 mb-8 font-light max-w-2xl">
+            
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="text-xl md:text-2xl text-gray-600 mb-2 font-medium"
+            >
               Curb rash • Cosmetic restoration • Color changes
-              <br />
-              <span className="font-semibold text-white mt-2 block">We come to you — home, work, or dealership</span>
+            </motion.p>
+            
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-lg text-brand-navy font-bold mb-10"
+            >
+              We come to you — home, work, or dealership
             </motion.p>
 
-            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button href={SMS_HREF} variant="primary">
-                <Camera className="w-5 h-5 mr-2" />
-                Text Photos for a Quote
-              </Button>
-              <Button href={PHONE_HREF} variant="secondary">
-                <Phone className="w-5 h-5 mr-2" />
-                Call for a Quote
-              </Button>
-              <Button to="/contact" variant="outline">
-                Book Mobile Repair
-              </Button>
-            </motion.div>
-          </motion.div>
-        </div>
-
-        {/* Badge Strip */}
-        <motion.div 
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.5 }}
-          className="absolute bottom-0 left-0 right-0 bg-zinc-900/90 border-t border-zinc-800 py-4 backdrop-blur-md z-20"
-        >
-          <div className="container mx-auto px-4">
-            <div className="flex flex-wrap justify-center md:justify-start gap-x-8 gap-y-2 text-sm md:text-base font-bold text-gray-300 uppercase tracking-wider">
-              <span className="flex items-center gap-2"><MapPin className="w-4 h-4 text-wizard-red" /> 100% Mobile Service</span>
-              <span className="hidden md:inline text-zinc-700">•</span>
-              <span className="flex items-center gap-2"><Shield className="w-4 h-4 text-wizard-red" /> Up to 60-Day Warranty</span>
-              <span className="hidden md:inline text-zinc-700">•</span>
-              <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-wizard-red" /> Fast Response</span>
-            </div>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* Intro Section */}
-      <section className="py-20 bg-black">
-        <div className="container mx-auto px-4 text-center">
-          <motion.h2 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeInUp}
-            className="text-3xl md:text-4xl font-bold text-white mb-6 max-w-4xl mx-auto leading-snug"
-          >
-            Skip the shop — Repair Wizardz delivers professional cosmetic rim repair anywhere in the RDU, with fast results and zero downtime.
-          </motion.h2>
-          
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            variants={stagger}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 max-w-5xl mx-auto"
-          >
-            {[
-              { icon: Clock, title: "Same-Day Availability", desc: "Most repairs take less than 90 minutes." },
-              { icon: MapPin, title: "On-Site Service", desc: "We come to your home or office." },
-              { icon: Palette, title: "OEM-Grade Color", desc: "Perfect matching for all major brands." }
-            ].map((feature, idx) => (
-              <motion.div 
-                key={idx} 
-                variants={fadeInUp} 
-                whileHover={{ y: -5 }}
-                className="bg-zinc-900/50 p-8 rounded-2xl border border-zinc-800 hover:border-wizard-red/50 transition-colors"
-              >
-                <div className="bg-zinc-800 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                  <feature.icon className="w-8 h-8 text-wizard-red" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>
-                <p className="text-gray-400">{feature.desc}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Services Preview */}
-      <section className="py-20 bg-zinc-950">
-        <div className="container mx-auto px-4">
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className="flex justify-between items-end mb-12"
-          >
-            <div>
-              <span className="text-wizard-red font-bold uppercase tracking-wider text-sm">Our Expertise</span>
-              <h2 className="text-4xl font-black text-white mt-2">Services</h2>
-            </div>
-            <Link to="/services" className="hidden md:flex items-center text-white hover:text-wizard-red transition-colors font-bold group">
-              View All Services <ChevronRight className="w-5 h-5 ml-1 transform group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </motion.div>
-
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            variants={stagger}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-          >
-            {[
-              { title: "Mobile Curb Rash Repair", icon: Wrench },
-              { title: "Cosmetic Rim Restoration", icon: Palette },
-              { title: "Custom Color Changes", icon: Palette },
-              { title: "Spot Repairs / Touch-Ups", icon: Camera }
-            ].map((service, idx) => (
-              <motion.div 
-                key={idx} 
-                variants={fadeInUp}
-                whileHover={{ y: -8 }} 
-                className="group bg-black p-8 rounded-xl border border-zinc-800 hover:border-wizard-red transition-all shadow-lg hover:shadow-red-900/10"
-              >
-                <service.icon className="w-8 h-8 text-gray-500 group-hover:text-wizard-red mb-6 transition-colors" />
-                <h3 className="text-xl font-bold text-white mb-4 leading-tight">{service.title}</h3>
-                <Link to="/services" className="text-sm font-semibold text-gray-400 group-hover:text-white flex items-center">
-                  Learn more <ChevronRight className="w-4 h-4 ml-1" />
-                </Link>
-              </motion.div>
-            ))}
-          </motion.div>
-          
-          <div className="mt-8 text-center md:hidden">
-            <Button to="/services" variant="secondary" fullWidth>View Services</Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Warranty Highlight */}
-      <section className="py-16 bg-gradient-to-br from-zinc-900 to-black border-y border-zinc-800 relative overflow-hidden">
-        <div className="absolute -right-20 -top-20 w-64 h-64 bg-wizard-red/5 blur-[100px] rounded-full pointer-events-none"></div>
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-          className="container mx-auto px-4 text-center relative z-10"
-        >
-          <div className="inline-flex items-center justify-center p-4 bg-wizard-red/10 rounded-full mb-6">
-            <Shield className="w-12 h-12 text-wizard-red" />
-          </div>
-          <h2 className="text-3xl md:text-5xl font-black text-white mb-4">
-            Up to 60-Day Workmanship Warranty Included
-          </h2>
-          <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
-            We stand behind our quality. Peace of mind comes standard with every repair.
-          </p>
-          <Button to="/warranty" variant="white">Read Warranty Details</Button>
-        </motion.div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="py-20 bg-black">
-        <div className="container mx-auto px-4">
-          <div className="bg-zinc-900 rounded-3xl p-8 md:p-16 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-wizard-red blur-[120px] opacity-20"></div>
-            
             <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={stagger}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="flex flex-col md:flex-row gap-4 justify-center items-center mb-12 max-w-lg mx-auto md:max-w-none"
             >
-              <div>
-                <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-white mb-8">Why Choose Repair Wizardz?</motion.h2>
-                <ul className="space-y-4">
-                  {[
-                    "100% mobile — we come to you",
-                    "No downtime or drop-off",
-                    "OEM-grade color matching",
-                    "Same-day availability",
-                    "Up to 60-day workmanship warranty",
-                    "Fast text-based quoting"
-                  ].map((item, idx) => (
-                    <motion.li key={idx} variants={fadeInUp} className="flex items-center text-lg text-gray-300">
-                      <div className="w-2 h-2 bg-wizard-red rounded-full mr-4 shadow-[0_0_10px_rgba(255,77,77,0.5)]"></div>
-                      {item}
-                    </motion.li>
-                  ))}
-                </ul>
-                <motion.p variants={fadeInUp} className="mt-8 text-white font-semibold italic border-l-4 border-wizard-red pl-4">
-                  "Professional cosmetic rim restoration — done on-site, clean, and hassle-free."
-                </motion.p>
-              </div>
-              <motion.div variants={fadeInUp} className="h-full min-h-[300px] rounded-xl overflow-hidden relative shadow-2xl">
-                 <img 
-                  src="https://images.unsplash.com/photo-1619682817481-e994891cd1f5?auto=format&fit=crop&q=80&w=800" 
-                  alt="Wheel repair close up" 
-                  className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
-                />
-              </motion.div>
+              <Button href={SMS_HREF} variant="primary" fullWidth>
+                <MessageCircle className="w-6 h-6 mr-2" />
+                Text Photos for Quote
+              </Button>
+              <Button href={PHONE_HREF} variant="outline" fullWidth>
+                <Phone className="w-6 h-6 mr-2" />
+                Call for Quote
+              </Button>
+              <Button to="/booking" variant="secondary" fullWidth>
+                <Calendar className="w-6 h-6 mr-2" />
+                Book Appointment
+              </Button>
             </motion.div>
+
+            {/* Trust Badges */}
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="flex flex-wrap justify-center gap-4 md:gap-8 text-sm md:text-base font-bold text-gray-500 uppercase tracking-wide"
+            >
+              <span className="flex items-center gap-2">
+                <MapPin className="w-5 h-5 text-brand-orange" /> 100% Mobile Service
+              </span>
+              <span className="flex items-center gap-2">
+                <ShieldCheck className="w-5 h-5 text-brand-orange" /> Up to 60-Day Warranty
+              </span>
+              <span className="flex items-center gap-2">
+                <Clock className="w-5 h-5 text-brand-orange" /> Same-Day Availability
+              </span>
+            </motion.div>
+
           </div>
         </div>
       </section>
 
-      {/* CTA Strip */}
-      <section className="bg-wizard-red py-12 relative overflow-hidden">
-         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
-          className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6 relative z-10"
-        >
-          <div className="text-center md:text-left">
-            <h2 className="text-2xl md:text-3xl font-black text-white uppercase italic">
-              Fastest Response
-            </h2>
-            <p className="text-white/90 font-medium text-lg">
-              Text Photos to <span className="font-bold">{PHONE_NUMBER}</span>
-            </p>
+      {/* Intro Icons Section */}
+      <section className="bg-brand-light py-16">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-xl text-brand-navy max-w-3xl mx-auto mb-12 font-medium leading-relaxed">
+            Skip the shop. Repair Wizardz delivers professional cosmetic rim repair anywhere in the RDU, with fast results and zero downtime.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
+            {[
+              { icon: Clock, title: "Same-Day Service", text: "Most repairs done in < 90 mins" },
+              { icon: MapPin, title: "We Come to You", text: "Home or office service" },
+              { icon: CheckCircle, title: "OEM Color Match", text: "Factory-perfect finish" }
+            ].map((item, idx) => (
+              <div key={idx} className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center">
+                <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-4">
+                  <item.icon className="w-8 h-8 text-brand-navy" />
+                </div>
+                <h3 className="text-xl font-heading font-bold text-brand-navy mb-2">{item.title}</h3>
+                <p className="text-gray-500">{item.text}</p>
+              </div>
+            ))}
           </div>
-          <motion.a 
-            href={SMS_HREF}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-white text-wizard-red hover:bg-gray-100 px-8 py-4 rounded-lg font-black uppercase tracking-widest text-lg shadow-lg"
-          >
-            Text Now
-          </motion.a>
-        </motion.div>
+
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-heading font-bold text-brand-navy mb-8">Our Services</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+              {['Mobile Curb Rash Repair', 'Cosmetic Rim Restoration', 'Custom Color Changes', 'Spot Repairs / Touch-Ups'].map((service, i) => (
+                <div key={i} className="bg-white p-4 border-l-4 border-brand-orange shadow-sm text-left font-bold text-lg text-brand-navy flex items-center justify-between group">
+                  {service}
+                  <ChevronRight className="text-gray-300 group-hover:text-brand-orange transition-colors" />
+                </div>
+              ))}
+            </div>
+            <Button to="/services" variant="secondary">View All Services</Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Warranty Badge Section */}
+      <section className="py-16 bg-white border-y border-gray-100">
+        <div className="container mx-auto px-4 text-center">
+          <ShieldCheck className="w-20 h-20 text-brand-navy mx-auto mb-6" />
+          <h2 className="text-3xl font-heading font-black text-brand-navy mb-4">Peace of Mind Included</h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+            Every repair comes with our up to 60-Day Workmanship Warranty. If it peels or flakes, we fix it for free.
+          </p>
+          <Button to="/warranty" variant="outline">Read Warranty Policy</Button>
+        </div>
+      </section>
+
+      {/* Orange CTA Strip */}
+      <section className="bg-brand-orange py-12">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-2xl md:text-3xl font-heading font-black text-white mb-6 uppercase">
+            Fastest Response → Text Photos to {PHONE_NUMBER}
+          </h2>
+          <div className="max-w-xs mx-auto">
+             <Button href={SMS_HREF} variant="white" fullWidth>
+                Text Now
+             </Button>
+          </div>
+        </div>
       </section>
     </div>
   );

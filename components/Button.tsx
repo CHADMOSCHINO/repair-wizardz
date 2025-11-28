@@ -12,9 +12,6 @@ interface ButtonProps {
   fullWidth?: boolean;
 }
 
-// Create a motion version of the Link component
-const MotionLink = motion(Link);
-
 const Button: React.FC<ButtonProps> = ({ 
   children, 
   variant = 'primary', 
@@ -24,45 +21,40 @@ const Button: React.FC<ButtonProps> = ({
   className = '', 
   fullWidth = false 
 }) => {
-  const baseStyles = "inline-flex items-center justify-center px-6 py-3 text-base font-bold rounded transition-colors duration-200 uppercase tracking-wide focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black cursor-pointer";
+  // "Huge, obvious, finger-friendly" styles
+  // Min height 48px is ensured by py-4
+  const baseStyles = "inline-flex items-center justify-center px-6 py-4 text-lg font-bold rounded-lg transition-all duration-200 shadow-md transform active:scale-95 cursor-pointer font-heading";
   
   const variants = {
-    primary: "bg-wizard-red hover:bg-red-600 text-white focus:ring-wizard-red border border-transparent",
-    secondary: "bg-zinc-800 hover:bg-zinc-700 text-white focus:ring-zinc-500 border border-zinc-700",
-    outline: "bg-transparent hover:bg-wizard-red/10 text-wizard-red border-2 border-wizard-red focus:ring-wizard-red",
-    white: "bg-white text-black hover:bg-gray-200 focus:ring-white border border-transparent"
+    primary: "bg-brand-orange text-white hover:bg-orange-600 border-2 border-transparent",
+    secondary: "bg-brand-navy text-white hover:bg-blue-900 border-2 border-transparent",
+    outline: "bg-white text-brand-navy border-2 border-brand-navy hover:bg-brand-light",
+    white: "bg-white text-brand-orange border-2 border-white hover:bg-gray-100"
   };
 
-  const widthClass = fullWidth ? "w-full" : "";
+  const widthClass = fullWidth ? "w-full" : "w-full sm:w-auto";
   const combinedClasses = `${baseStyles} ${variants[variant]} ${widthClass} ${className}`;
-
-  // Animation props for that "swift" tactile feel
-  const motionProps = {
-    whileHover: { scale: 1.02 },
-    whileTap: { scale: 0.96 },
-    transition: { type: "spring", stiffness: 400, damping: 17 }
-  };
 
   if (to) {
     return (
-      <MotionLink to={to} className={combinedClasses} {...motionProps}>
+      <Link to={to} className={combinedClasses}>
         {children}
-      </MotionLink>
+      </Link>
     );
   }
 
   if (href) {
     return (
-      <motion.a href={href} className={combinedClasses} {...motionProps}>
+      <a href={href} className={combinedClasses}>
         {children}
-      </motion.a>
+      </a>
     );
   }
 
   return (
-    <motion.button onClick={onClick} className={combinedClasses} {...motionProps}>
+    <button onClick={onClick} className={combinedClasses}>
       {children}
-    </motion.button>
+    </button>
   );
 };
 

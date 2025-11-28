@@ -3,6 +3,7 @@ import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-d
 import { AnimatePresence } from 'framer-motion';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import FloatingCTA from './components/FloatingCTA';
 import ScrollToTop from './components/ScrollToTop';
 import PageTransition from './components/PageTransition';
 
@@ -10,7 +11,8 @@ import PageTransition from './components/PageTransition';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import Warranty from './pages/Warranty';
-import Contact from './pages/Contact';
+import ServiceArea from './pages/ServiceArea';
+import Booking from './pages/Booking';
 import About from './pages/About';
 
 const AnimatedRoutes: React.FC = () => {
@@ -22,8 +24,11 @@ const AnimatedRoutes: React.FC = () => {
         <Route path="/" element={<PageTransition><Home /></PageTransition>} />
         <Route path="/services" element={<PageTransition><Services /></PageTransition>} />
         <Route path="/warranty" element={<PageTransition><Warranty /></PageTransition>} />
+        <Route path="/service-area" element={<PageTransition><ServiceArea /></PageTransition>} />
+        <Route path="/booking" element={<PageTransition><Booking /></PageTransition>} />
         <Route path="/about" element={<PageTransition><About /></PageTransition>} />
-        <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+        {/* Redirect old contact route to booking for safety */}
+        <Route path="/contact" element={<PageTransition><Booking /></PageTransition>} />
       </Routes>
     </AnimatePresence>
   );
@@ -33,10 +38,13 @@ const App: React.FC = () => {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen bg-black text-white flex flex-col font-sans">
+      <div className="min-h-screen bg-white text-brand-navy font-sans flex flex-col">
         <Header />
-        <AnimatedRoutes />
+        <main className="flex-grow flex flex-col">
+          <AnimatedRoutes />
+        </main>
         <Footer />
+        <FloatingCTA />
       </div>
     </Router>
   );

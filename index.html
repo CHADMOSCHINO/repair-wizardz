@@ -4,17 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Repair Wizardz | RDU Mobile Rim Repair</title>
-    <meta name="description" content="RDU’s Mobile Rim Repair Specialists. Curb rash, cosmetic restoration, and color changes. We come to you." />
+    <meta name="description" content="RDU’s #1 Mobile Rim Repair Service. We come to you. Curb rash, cosmetic restoration, and color changes." />
     
-    <!-- Open Graph / Social Media Meta Tags -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Repair Wizardz | Mobile Rim Repair" />
     <meta property="og:description" content="Professional cosmetic rim repair delivered to your driveway. Serving Raleigh, Durham, and surrounding areas." />
-    <meta property="og:image" content="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=1200" />
-    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1578844251758-2f71da645217?auto=format&fit=crop&q=80&w=1200" />
 
-    <!-- Favicon (Data URI for immediate use) -->
+    <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧙‍♂️</text></svg>">
+
+    <!-- Fonts: Inter (Body) + Montserrat (Headings) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -22,36 +24,42 @@
         theme: {
           extend: {
             colors: {
-              wizard: {
-                red: '#ff4d4d',
-                dark: '#0a0a0a',
-                gray: '#1f1f1f'
+              brand: {
+                orange: '#f97316', // Primary Action
+                navy: '#1e3a8a',   // Text/Links
+                light: '#f8fafc',  // Backgrounds
               }
             },
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
+              heading: ['Montserrat', 'sans-serif'],
             }
           }
         }
       }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <style>
       body { font-family: 'Inter', sans-serif; }
+      h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
       
-      /* Custom Premium Scrollbar */
+      /* Smooth scrolling adjustment for sticky header */
+      html {
+        scroll-padding-top: 80px;
+      }
+      
+      /* Hide scrollbar for cleaner look but keep functionality */
       ::-webkit-scrollbar {
         width: 8px;
       }
       ::-webkit-scrollbar-track {
-        background: #0a0a0a;
+        background: #f1f1f1;
       }
       ::-webkit-scrollbar-thumb {
-        background: #333;
+        background: #ccc;
         border-radius: 4px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #ff4d4d;
+        background: #f97316;
       }
     </style>
   <script type="importmap">
@@ -67,7 +75,7 @@
 }
 </script>
 </head>
-  <body class="bg-black text-white antialiased selection:bg-wizard-red selection:text-white overflow-x-hidden">
+  <body class="bg-white text-brand-navy antialiased selection:bg-brand-orange selection:text-white overflow-x-hidden">
     <div id="root"></div>
   </body>
 </html>
