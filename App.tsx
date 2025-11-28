@@ -14,6 +14,8 @@ import Warranty from './pages/Warranty';
 import ServiceArea from './pages/ServiceArea';
 import Booking from './pages/Booking';
 import About from './pages/About';
+import FAQ from './pages/FAQ';
+import Terms from './pages/Terms';
 
 const AnimatedRoutes: React.FC = () => {
   const location = useLocation();
@@ -26,6 +28,8 @@ const AnimatedRoutes: React.FC = () => {
         <Route path="/warranty" element={<PageTransition><Warranty /></PageTransition>} />
         <Route path="/service-area" element={<PageTransition><ServiceArea /></PageTransition>} />
         <Route path="/booking" element={<PageTransition><Booking /></PageTransition>} />
+        <Route path="/faq" element={<PageTransition><FAQ /></PageTransition>} />
+        <Route path="/terms" element={<PageTransition><Terms /></PageTransition>} />
         <Route path="/about" element={<PageTransition><About /></PageTransition>} />
         {/* Redirect old contact route to booking for safety */}
         <Route path="/contact" element={<PageTransition><Booking /></PageTransition>} />
@@ -38,7 +42,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen bg-white text-brand-navy font-sans flex flex-col">
+      <div className="min-h-screen bg-wizard-black text-white font-sans flex flex-col">
         <Header />
         <main className="flex-grow flex flex-col">
           <AnimatedRoutes />

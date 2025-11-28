@@ -24,10 +24,11 @@
         theme: {
           extend: {
             colors: {
-              brand: {
-                orange: '#f97316', // Primary Action
-                navy: '#1e3a8a',   // Text/Links
-                light: '#f8fafc',  // Backgrounds
+              wizard: {
+                red: '#ff4d4d',    // Primary Accent (Fire/Red-Orange)
+                black: '#0a0a0a',  // Main Background
+                gray: '#1f1f1f',   // Secondary Background / Cards
+                light: '#e5e5e5',  // Text Muted
               }
             },
             fontFamily: {
@@ -50,16 +51,17 @@
       /* Hide scrollbar for cleaner look but keep functionality */
       ::-webkit-scrollbar {
         width: 8px;
+        background: #0a0a0a;
       }
       ::-webkit-scrollbar-track {
-        background: #f1f1f1;
+        background: #0a0a0a;
       }
       ::-webkit-scrollbar-thumb {
-        background: #ccc;
+        background: #333;
         border-radius: 4px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #f97316;
+        background: #ff4d4d;
       }
     </style>
   <script type="importmap">
@@ -75,7 +77,7 @@
 }
 </script>
 </head>
-  <body class="bg-white text-brand-navy antialiased selection:bg-brand-orange selection:text-white overflow-x-hidden">
+  <body class="bg-wizard-black text-white antialiased selection:bg-wizard-red selection:text-white overflow-x-hidden">
     <div id="root"></div>
   </body>
 </html>

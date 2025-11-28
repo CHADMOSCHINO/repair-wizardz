@@ -29,10 +29,10 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <div className="pt-8 pb-20">
+    <div className="pt-8 pb-20 bg-wizard-black text-white">
       <div className="container mx-auto px-4 text-center mb-12">
-        <h1 className="text-4xl font-heading font-black text-brand-navy mb-4">Our Services</h1>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+        <h1 className="text-4xl font-heading font-black text-white mb-4">Our Services</h1>
+        <p className="text-xl text-gray-400 max-w-2xl mx-auto">
           Professional cosmetic repair at your convenience.
         </p>
       </div>
@@ -44,19 +44,20 @@ const Services: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className={`py-16 ${index % 2 === 0 ? 'bg-white' : 'bg-brand-light'}`}
+            transition={{ duration: 0.5 }}
+            className={`py-16 ${index % 2 === 0 ? 'bg-wizard-black' : 'bg-wizard-gray'}`}
           >
             <div className="container mx-auto px-4 max-w-4xl">
               <div className="flex flex-col md:flex-row gap-8 items-start">
-                <div className="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shrink-0 font-bold text-xl shadow-md">
+                <div className="bg-wizard-red text-white w-12 h-12 rounded-full flex items-center justify-center shrink-0 font-bold text-xl shadow-lg shadow-red-500/30">
                   {index + 1}
                 </div>
                 <div className="flex-1">
-                  <h2 className="text-2xl font-heading font-bold text-brand-navy mb-4">{service.title}</h2>
-                  <p className="text-lg text-gray-700 mb-4 leading-relaxed">
+                  <h2 className="text-2xl font-heading font-bold text-white mb-4">{service.title}</h2>
+                  <p className="text-lg text-gray-300 mb-4 leading-relaxed">
                     {service.desc}
                   </p>
-                  <p className="text-brand-orange font-bold text-sm uppercase tracking-wide mb-6">
+                  <p className="text-wizard-red font-bold text-sm uppercase tracking-wide mb-6">
                     {service.ideal}
                   </p>
                   <Button href={SMS_HREF} variant="outline">
@@ -72,12 +73,12 @@ const Services: React.FC = () => {
 
       {/* Warning Box */}
       <div className="container mx-auto px-4 mt-16 max-w-3xl">
-        <div className="border-l-8 border-red-600 bg-red-50 p-8 rounded-r-lg shadow-sm">
+        <div className="border-l-8 border-red-600 bg-red-900/20 p-8 rounded-r-lg border border-red-900/50">
           <div className="flex items-start gap-4">
-            <AlertTriangle className="w-8 h-8 text-red-600 shrink-0" />
+            <AlertTriangle className="w-8 h-8 text-red-500 shrink-0" />
             <div>
-              <h3 className="text-xl font-bold text-red-900 mb-2">Important Note</h3>
-              <p className="text-red-800 font-medium">
+              <h3 className="text-xl font-bold text-red-400 mb-2">Important Note</h3>
+              <p className="text-red-200 font-medium">
                 Repair Wizardz provides <strong>cosmetic rim repair only</strong>. We do NOT repair bent, cracked, or structurally damaged wheels. If your wheel is vibrating or losing air, please visit a structural wheel repair shop.
               </p>
             </div>

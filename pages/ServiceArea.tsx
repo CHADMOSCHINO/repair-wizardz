@@ -11,25 +11,25 @@ const ServiceArea: React.FC = () => {
   ];
 
   return (
-    <div className="py-16 bg-brand-light min-h-screen">
+    <div className="py-16 bg-wizard-gray min-h-screen text-white">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-heading font-black text-brand-navy mb-4">Service Area</h1>
-          <p className="text-xl text-gray-600">
+          <h1 className="text-4xl font-heading font-black text-white mb-4">Service Area</h1>
+          <p className="text-xl text-gray-400">
             We are 100% mobile. We come to your home, office, or workplace.
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 mb-12">
-          <div className="flex items-center gap-3 mb-8 pb-4 border-b border-gray-100">
-            <MapPin className="w-8 h-8 text-brand-orange" />
-            <h2 className="text-2xl font-bold text-brand-navy">Proudly Serving the Entire RDU</h2>
+        <div className="bg-wizard-black rounded-2xl shadow-lg border border-white/10 p-8 mb-12">
+          <div className="flex items-center gap-3 mb-8 pb-4 border-b border-white/10">
+            <MapPin className="w-8 h-8 text-wizard-red" />
+            <h2 className="text-2xl font-bold text-white">Proudly Serving the Entire RDU</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {cities.map((city) => (
-              <div key={city} className="flex items-center gap-2 text-gray-700 font-medium p-2 hover:bg-gray-50 rounded">
-                <div className="w-2 h-2 bg-brand-orange rounded-full"></div>
+              <div key={city} className="flex items-center gap-2 text-gray-300 font-medium p-2 hover:bg-white/5 rounded transition-colors">
+                <div className="w-2 h-2 bg-wizard-red rounded-full"></div>
                 {city}
               </div>
             ))}
