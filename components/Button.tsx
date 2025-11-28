@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -11,6 +12,9 @@ interface ButtonProps {
   fullWidth?: boolean;
 }
 
+// Create a motion version of the Link component
+const MotionLink = motion(Link);
+
 const Button: React.FC<ButtonProps> = ({ 
   children, 
   variant = 'primary', 
@@ -20,7 +24,7 @@ const Button: React.FC<ButtonProps> = ({
   className = '', 
   fullWidth = false 
 }) => {
-  const baseStyles = "inline-flex items-center justify-center px-6 py-3 text-base font-bold rounded transition-all duration-200 uppercase tracking-wide focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black";
+  const baseStyles = "inline-flex items-center justify-center px-6 py-3 text-base font-bold rounded transition-colors duration-200 uppercase tracking-wide focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black cursor-pointer";
   
   const variants = {
     primary: "bg-wizard-red hover:bg-red-600 text-white focus:ring-wizard-red border border-transparent",
@@ -32,26 +36,33 @@ const Button: React.FC<ButtonProps> = ({
   const widthClass = fullWidth ? "w-full" : "";
   const combinedClasses = `${baseStyles} ${variants[variant]} ${widthClass} ${className}`;
 
+  // Animation props for that "swift" tactile feel
+  const motionProps = {
+    whileHover: { scale: 1.02 },
+    whileTap: { scale: 0.96 },
+    transition: { type: "spring", stiffness: 400, damping: 17 }
+  };
+
   if (to) {
     return (
-      <Link to={to} className={combinedClasses}>
+      <MotionLink to={to} className={combinedClasses} {...motionProps}>
         {children}
-      </Link>
+      </MotionLink>
     );
   }
 
   if (href) {
     return (
-      <a href={href} className={combinedClasses}>
+      <motion.a href={href} className={combinedClasses} {...motionProps}>
         {children}
-      </a>
+      </motion.a>
     );
   }
 
   return (
-    <button onClick={onClick} className={combinedClasses}>
+    <motion.button onClick={onClick} className={combinedClasses} {...motionProps}>
       {children}
-    </button>
+    </motion.button>
   );
 };
 
