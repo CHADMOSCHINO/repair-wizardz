@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Impact - WeCare Jamaica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="jamaica-map.js" defer></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .parish-marker.selected .parish-circle {
+            stroke-width: 4;
+            filter: drop-shadow(0 0 8px rgba(21, 128, 61, 0.6));
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <nav class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="relative w-10 h-10 rounded-lg bg-white border border-green-700/30 shadow-sm flex items-center justify-center overflow-hidden">
+                        <div class="absolute inset-0 bg-green-700/5"></div>
+                        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg" alt="WeCare" class="h-full w-full object-contain">
+                    </div>
+                    <div class="-space-y-1">
+                        <span class="text-base sm:text-lg font-semibold text-green-800 tracking-tight">WECARE</span>
+                        <span class="text-xs font-medium text-green-700 tracking-[0.18em] uppercase">Jamaica</span>
+                    </div>
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html" class="text-sm font-medium text-gray-600 hover:text-gray-900">Home</a>
+                    <a href="about.html" class="text-sm font-medium text-gray-600 hover:text-gray-900">About</a>
+                    <a href="programs.html" class="text-sm font-medium text-gray-600 hover:text-gray-900">Programs</a>
+                    <a href="donate.html" class="text-sm font-medium text-gray-600 hover:text-gray-900">Donate</a>
+                    <a href="contact.html" class="text-sm font-medium text-gray-600 hover:text-gray-900">Contact</a>
+                </div>
+                <a href="donate.html" class="hidden sm:flex items-center gap-2 bg-green-700 hover:bg-green-800 text-white text-sm font-medium px-5 py-2.5 rounded-full">
+                    <i data-lucide="heart" class="w-4 h-4"></i>Donate
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-16 lg:pt-40 lg:pb-20 bg-gradient-to-br from-green-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold text-gray-900 mb-6">Our Impact Across Jamaica</h1>
+            <p class="text-lg text-gray-700 max-w-2xl mx-auto">See where WECARE is delivering aid and rebuilding communities</p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-semibold text-gray-900 mb-8 text-center">Interactive Impact Map</h2>
+            <p class="text-gray-600 text-center mb-8 max-w-2xl mx-auto">Click on any parish to see detailed impact information, aid distribution, and rebuilding progress.</p>
+            <div id="jamaica-map-container"></div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-semibold text-gray-900 mb-12 text-center">Photo Gallery</h2>
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="rounded-2xl h-64 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80');"></div>
+                <div class="rounded-2xl h-64 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&q=80');"></div>
+                <div class="rounded-2xl h-64 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80');"></div>
+                <div class="rounded-2xl h-64 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=800&q=80');"></div>
+                <div class="rounded-2xl h-64 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&q=80');"></div>
+                <div class="rounded-2xl h-64 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=800&q=80');"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-semibold text-gray-900 mb-8">Monthly Impact Reports</h2>
+            <div class="space-y-4">
+                <div class="bg-gray-50 rounded-2xl p-6 flex items-center justify-between border border-gray-200">
+                    <div><h3 class="font-semibold text-gray-900">December 2024 Impact Report</h3><p class="text-sm text-gray-600">240 families served</p></div>
+                    <button class="text-green-700"><i data-lucide="download" class="w-5 h-5"></i></button>
+                </div>
+                <div class="bg-gray-50 rounded-2xl p-6 flex items-center justify-between border border-gray-200">
+                    <div><h3 class="font-semibold text-gray-900">November 2024 Impact Report</h3><p class="text-sm text-gray-600">185 families served</p></div>
+                    <button class="text-green-700"><i data-lucide="download" class="w-5 h-5"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 py-16">
+        <div class="max-w-7xl mx-auto px-4 text-center text-gray-500 text-sm">© 2025 WECARE Jamaica. All rights reserved.</div>
+    </footer>
+
+    <script>lucide.createIcons({ attrs: { strokeWidth: 1.5 } });</script>
+</body>
+</html>

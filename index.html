@@ -1,83 +1,577 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Repair Wizardz | RDU Mobile Rim Repair</title>
-    <meta name="description" content="RDU’s #1 Mobile Rim Repair Service. We come to you. Curb rash, cosmetic restoration, and color changes." />
-    
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Repair Wizardz | Mobile Rim Repair" />
-    <meta property="og:description" content="Professional cosmetic rim repair delivered to your driveway. Serving Raleigh, Durham, and surrounding areas." />
-    <meta property="og:image" content="https://images.unsplash.com/photo-1578844251758-2f71da645217?auto=format&fit=crop&q=80&w=1200" />
-
-    <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧙‍♂️</text></svg>">
-
-    <!-- Fonts: Inter (Body) + Montserrat (Headings) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeCare Jamaica - Rebuild Hope, Rebuild Jamaica</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              wizard: {
-                red: '#ff4d4d',    // Primary Accent (Fire/Red-Orange)
-                black: '#0a0a0a',  // Main Background
-                gray: '#1f1f1f',   // Secondary Background / Cards
-                light: '#e5e5e5',  // Text Muted
-              }
-            },
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              heading: ['Montserrat', 'sans-serif'],
-            }
-          }
-        }
-      }
-    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-      body { font-family: 'Inter', sans-serif; }
-      h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
-      
-      /* Smooth scrolling adjustment for sticky header */
-      html {
-        scroll-padding-top: 80px;
-      }
-      
-      /* Hide scrollbar for cleaner look but keep functionality */
-      ::-webkit-scrollbar {
-        width: 8px;
-        background: #0a0a0a;
-      }
-      ::-webkit-scrollbar-track {
-        background: #0a0a0a;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #333;
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #ff4d4d;
-      }
+        body { font-family: 'Inter', sans-serif; }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
-    "framer-motion": "https://aistudiocdn.com/framer-motion@^11.0.8"
-  }
-}
-</script>
 </head>
-  <body class="bg-wizard-black text-white antialiased selection:bg-wizard-red selection:text-white overflow-x-hidden">
-    <div id="root"></div>
-  </body>
+<body class="bg-white text-gray-900 antialiased">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <div class="relative w-10 h-10 rounded-lg bg-white border border-green-700/30 shadow-sm flex items-center justify-center overflow-hidden">
+                        <div class="absolute inset-0 bg-green-700/5"></div>
+                        <!-- Heart logo from image -->
+                        <img
+                            src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg"
+                            alt="WeCare Jamaica heart logo"
+                            class="relative h-full w-full object-contain"
+                        >
+                    </div>
+                    <div class="-space-y-1">
+                        <span class="text-base sm:text-lg font-semibold text-green-800 tracking-tight leading-snug">WECARE</span>
+                        <span class="text-xs font-medium text-green-700 tracking-[0.18em] uppercase">Jamaica</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Our Mission</a>
+                    <a href="#programs" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">What We Do</a>
+                    <a href="#impact-map" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Impact Map</a>
+                    <a href="#volunteer" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Volunteer</a>
+                    <a href="#gallery" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Gallery</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="flex items-center gap-4">
+                    <button class="hidden sm:flex items-center gap-2 bg-green-700 hover:bg-green-800 text-white text-sm font-medium px-5 py-2.5 rounded-full transition-all hover:shadow-lg hover:shadow-green-700/25">
+                        <i data-lucide="heart" class="w-4 h-4"></i>
+                        Donate Now
+                    </button>
+                    <button class="md:hidden p-2">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-16 lg:pt-20">
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+            <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1920&q=80" alt="Helping hands" class="w-full h-full object-cover opacity-40 mix-blend-overlay">
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-gray-900/40"></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+            <div class="max-w-2xl">
+                <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white text-xs font-medium px-4 py-2 rounded-full mb-6 border border-white/20">
+                    <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                    Current Emergency: Hurricane Melissa Relief
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white tracking-tight leading-tight mb-4">
+                    Rebuilding Jamaica,<br>
+                    <span class="text-green-400">One Family at a Time.</span>
+                </h1>
+
+                <p class="text-lg text-gray-300 mb-6 max-w-xl leading-relaxed">
+                    WECARE Jamaica is a U.S.-based 501(c)(3) nonprofit providing rapid humanitarian aid, disaster relief, and long-term community rebuilding for families impacted by Hurricane Melissa and future natural disasters.
+                </p>
+
+                <p class="text-base text-gray-300 mb-8 max-w-xl leading-relaxed">
+                    We believe in unity, community strength, and restoring hope after devastation.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 mb-10">
+                    <button class="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-medium px-8 py-4 rounded-full transition-all hover:shadow-xl hover:shadow-green-600/30 text-base">
+                        <i data-lucide="heart" class="w-5 h-5"></i>
+                        Donate Now
+                    </button>
+                    <button class="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-medium px-8 py-4 rounded-full transition-all border border-white/20 text-base">
+                        <i data-lucide="users" class="w-5 h-5"></i>
+                        Become a Volunteer
+                    </button>
+                </div>
+
+                <!-- Current Emergency highlight -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/10 mb-6">
+                    <p class="text-sm text-gray-200 leading-relaxed">
+                        Hurricane Melissa devastated thousands of families across Jamaica. Homes were destroyed. Roads collapsed. Communities were cut off. WECARE Jamaica responded immediately — providing food, water, hygiene kits, medical supplies, and boots-on-the-ground support.
+                    </p>
+                    <button class="mt-3 inline-flex items-center gap-2 text-green-300 text-sm font-medium hover:text-green-200 transition-colors">
+                        See Our Melissa Relief Work
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <!-- Live Donation Ticker -->
+                <div class="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-2xl px-5 py-3 w-fit border border-white/10">
+                    <div class="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center">
+                        <i data-lucide="sparkles" class="w-4 h-4 text-green-400"></i>
+                    </div>
+                    <div>
+                        <p class="text-white text-sm font-medium">Frances sponsored a family</p>
+                        <p class="text-gray-400 text-xs">1 day ago</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+            <i data-lucide="chevron-down" class="w-6 h-6 text-white/60"></i>
+        </div>
+    </section>
+
+    <!-- Announcement Bar -->
+    <section class="bg-green-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center">
+                <p class="text-green-100 text-sm">Your actions today can create lasting change</p>
+                <a href="#" class="text-white font-medium text-sm hover:underline flex items-center gap-1">
+                    Donate Now <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Mission -->
+    <section id="mission" class="py-16 lg:py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-green-700 font-semibold text-sm uppercase tracking-wide mb-3">Our Mission</p>
+            <h2 class="text-3xl lg:text-4xl font-semibold tracking-tight text-gray-900 mb-4">
+                Fast, compassionate aid. Long-term community rebuilding.
+            </h2>
+            <p class="text-gray-700 text-base lg:text-lg leading-relaxed mb-3">
+                At WECARE Jamaica, our mission is simple: provide fast, effective, and compassionate aid to families affected by disasters — and help rebuild the communities they call home.
+            </p>
+            <p class="text-gray-700 text-base lg:text-lg leading-relaxed">
+                We believe in unity, community strength, and restoring hope after devastation.
+            </p>
+        </div>
+    </section>
+
+    <!-- Impact Section (kept, still useful stats) -->
+    <section class="py-20 lg:py-28 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="text-green-700 font-semibold text-sm uppercase tracking-wide mb-3">Measurable Results</p>
+                <h2 class="text-3xl lg:text-4xl font-semibold tracking-tight text-gray-900 mb-4">Our Impact</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Data from July 2023 – June 2024</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6">
+                <!-- Stat Card 1 -->
+                <div class="bg-white rounded-2xl p-6 lg:p-8 border border-gray-200 hover:border-green-200 hover:shadow-lg hover:shadow-green-100/50 transition-all group">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-green-100 transition-colors">
+                        <i data-lucide="users" class="w-6 h-6 text-green-700"></i>
+                    </div>
+                    <p class="text-2xl lg:text-3xl font-semibold text-green-700 tracking-tight mb-2">18,355</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">WECARE Jamaica members and volunteers acted for humanity</p>
+                </div>
+
+                <!-- Stat Card 2 -->
+                <div class="bg-white rounded-2xl p-6 lg:p-8 border border-gray-200 hover:border-green-200 hover:shadow-lg hover:shadow-green-100/50 transition-all group">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-green-100 transition-colors">
+                        <i data-lucide="phone" class="w-6 h-6 text-green-700"></i>
+                    </div>
+                    <p class="text-2xl lg:text-3xl font-semibold text-green-700 tracking-tight mb-2">78,401</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">Hours connecting with vulnerable people through Telecross programs</p>
+                </div>
+
+                <!-- Stat Card 3 -->
+                <div class="bg-white rounded-2xl p-6 lg:p-8 border border-gray-200 hover:border-green-200 hover:shadow-lg hover:shadow-green-100/50 transition-all group">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-green-100 transition-colors">
+                        <i data-lucide="hand-heart" class="w-6 h-6 text-green-700"></i>
+                    </div>
+                    <p class="text-2xl lg:text-3xl font-semibold text-green-700 tracking-tight mb-2">213,000</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">People received support before, during and after disasters</p>
+                </div>
+
+                <!-- Stat Card 4 -->
+                <div class="bg-white rounded-2xl p-6 lg:p-8 border border-gray-200 hover:border-green-200 hover:shadow-lg hover:shadow-green-100/50 transition-all group">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-green-100 transition-colors">
+                        <i data-lucide="globe-2" class="w-6 h-6 text-green-700"></i>
+                    </div>
+                    <p class="text-2xl lg:text-3xl font-semibold text-green-700 tracking-tight mb-2">23,600+</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">People from 129 countries received migration support</p>
+                </div>
+
+                <!-- Stat Card 5 -->
+                <div class="bg-white rounded-2xl p-6 lg:p-8 border border-gray-200 hover:border-green-200 hover:shadow-lg hover:shadow-green-100/50 transition-all group col-span-2 md:col-span-1">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-green-100 transition-colors">
+                        <i data-lucide="briefcase" class="w-6 h-6 text-green-700"></i>
+                    </div>
+                    <p class="text-2xl lg:text-3xl font-semibold text-green-700 tracking-tight mb-2">16,810</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">People accessed our Work Right Hub website for resources</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Do / Programs Section -->
+    <section id="programs" class="py-20 lg:py-28 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="text-green-700 font-semibold text-sm uppercase tracking-wide mb-3">What We Do</p>
+                <h2 class="text-3xl lg:text-4xl font-semibold tracking-tight text-gray-900 mb-4">Emergency Relief & Long-Term Recovery</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">From rapid response to rebuilding, WECARE Jamaica walks with families every step of the way.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Emergency Relief -->
+                <div class="group bg-white rounded-2xl border border-gray-200 hover:border-green-200 hover:shadow-xl transition-all p-6 lg:p-8">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-green-100 transition-colors">
+                        <i data-lucide="alert-triangle" class="w-6 h-6 text-green-700"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 tracking-tight mb-3">Emergency Relief</h3>
+                    <p class="text-gray-600 text-base mb-4 leading-relaxed">
+                        Delivering food, water, clothing, hygiene kits, medical supplies, and critical logistics to affected families.
+                    </p>
+                </div>
+
+                <!-- Long-Term Recovery -->
+                <div class="group bg-white rounded-2xl border border-gray-200 hover:border-green-200 hover:shadow-xl transition-all p-6 lg:p-8">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-green-100 transition-colors">
+                        <i data-lucide="home" class="w-6 h-6 text-green-700"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 tracking-tight mb-3">Long-Term Recovery</h3>
+                    <p class="text-gray-600 text-base mb-4 leading-relaxed">
+                        Rebuilding homes, restoring schools, providing tools, and supporting families as they restart their lives.
+                    </p>
+                </div>
+
+                <!-- Medical & Health Support -->
+                <div class="group bg-white rounded-2xl border border-gray-200 hover:border-green-200 hover:shadow-xl transition-all p-6 lg:p-8">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-green-100 transition-colors">
+                        <i data-lucide="stethoscope" class="w-6 h-6 text-green-700"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 tracking-tight mb-3">Medical & Health Support</h3>
+                    <p class="text-gray-600 text-base mb-4 leading-relaxed">
+                        Sending medical supplies, volunteer nurses &amp; doctors, and first aid teams to communities in crisis.
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <button class="inline-flex items-center gap-2 text-green-700 font-medium text-base hover:text-green-800 transition-colors">
+                    Learn More About Our Programs
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Map of Jamaica -->
+    <section id="impact-map" class="py-20 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+                <div>
+                    <p class="text-green-700 font-semibold text-sm uppercase tracking-wide mb-3">Interactive Map of Jamaica</p>
+                    <h2 class="text-3xl lg:text-4xl font-semibold tracking-tight text-gray-900 mb-4">
+                        See where WECARE is delivering aid right now.
+                    </h2>
+                    <p class="text-gray-700 text-base lg:text-lg leading-relaxed mb-6">
+                        Explore the areas impacted by Hurricane Melissa and follow our on-the-ground response — from food distribution to rebuilding projects.
+                    </p>
+                    <button class="inline-flex items-center gap-2 bg-green-700 hover:bg-green-800 text-white font-medium px-6 py-3 rounded-full transition-all hover:shadow-lg hover:shadow-green-700/25 text-base">
+                        <i data-lucide="map" class="w-5 h-5"></i>
+                        View Full Impact Map
+                    </button>
+                </div>
+                <div class="rounded-2xl border border-gray-200 bg-gray-50 h-72 sm:h-80 lg:h-96 flex items-center justify-center text-gray-500 text-sm">
+                    <span class="flex items-center gap-2">
+                        <i data-lucide="map-pin" class="w-5 h-5"></i>
+                        Interactive map placeholder
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gift Catalog -->
+    <section class="py-20 lg:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <p class="text-green-700 font-semibold text-sm uppercase tracking-wide mb-3">Gift Catalog: Make a Direct Impact</p>
+                <h2 class="text-3xl lg:text-4xl font-semibold tracking-tight text-gray-900 mb-4">Choose a gift that goes straight to families in need.</h2>
+            </div>
+            <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-6">
+                <div class="bg-white rounded-2xl border border-gray-200 p-4 text-center text-sm text-gray-700">Feed a family for a week</div>
+                <div class="bg-white rounded-2xl border border-gray-200 p-4 text-center text-sm text-gray-700">Hygiene &amp; essentials kit</div>
+                <div class="bg-white rounded-2xl border border-gray-200 p-4 text-center text-sm text-gray-700">Medical emergency kit</div>
+                <div class="bg-white rounded-2xl border border-gray-200 p-4 text-center text-sm text-gray-700">Tools for rebuilding</div>
+                <div class="bg-white rounded-2xl border border-gray-200 p-4 text-center text-sm text-gray-700">School rebuilding support</div>
+                <div class="bg-white rounded-2xl border border-gray-200 p-4 text-center text-sm text-gray-700">Sponsor a family</div>
+            </div>
+            <div class="text-center mt-10">
+                <button class="inline-flex items-center gap-2 text-green-700 font-medium text-base hover:text-green-800 transition-colors">
+                    Shop the Gift Catalog
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteer With Us -->
+    <section id="volunteer" class="py-20 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-10 items-start">
+                <div>
+                    <p class="text-green-700 font-semibold text-sm uppercase tracking-wide mb-3">Volunteer With Us</p>
+                    <h2 class="text-3xl lg:text-4xl font-semibold tracking-tight text-gray-900 mb-4">
+                        Volunteers are the heart of our mission.
+                    </h2>
+                    <p class="text-gray-700 text-base lg:text-lg leading-relaxed mb-6">
+                        Join us in restoring homes, hope, and dignity across Jamaica — on the ground or from wherever you are.
+                    </p>
+                    <button class="inline-flex items-center gap-2 bg-green-700 hover:bg-green-800 text-white font-medium px-6 py-3 rounded-full transition-all hover:shadow-lg hover:shadow-green-700/25 text-base mb-6">
+                        <i data-lucide="users" class="w-5 h-5"></i>
+                        Become a Volunteer
+                    </button>
+                </div>
+                <div class="grid sm:grid-cols-2 gap-4 text-sm text-gray-700">
+                    <div class="bg-gray-50 rounded-2xl border border-gray-200 p-4">
+                        <p>Sorting &amp; packing donations</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-2xl border border-gray-200 p-4">
+                        <p>Rebuilding communities</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-2xl border border-gray-200 p-4">
+                        <p>Landscaping &amp; repair</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-2xl border border-gray-200 p-4">
+                        <p>Medical support</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-2xl border border-gray-200 p-4">
+                        <p>Running donation drives</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-2xl border border-gray-200 p-4">
+                        <p>On-ground distribution in Jamaica</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="py-20 lg:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-10">
+                <div>
+                    <p class="text-green-700 font-semibold text-sm uppercase tracking-wide mb-3">Our Gallery</p>
+                    <h2 class="text-3xl lg:text-4xl font-semibold tracking-tight text-gray-900 mb-3">
+                        From devastation to rebuilding.
+                    </h2>
+                    <p class="text-gray-600 text-base lg:text-lg max-w-xl">
+                        See the real lives you're helping — families, volunteers, and communities rebuilding together.
+                    </p>
+                </div>
+                <button class="inline-flex items-center gap-2 text-green-700 font-medium text-base hover:text-green-800 transition-colors">
+                    View Photos &amp; Videos
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="rounded-2xl h-56 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80');"></div>
+                <div class="rounded-2xl h-56 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&q=80');"></div>
+                <div class="rounded-2xl h-56 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80');"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section (kept) -->
+    <section class="py-20 lg:py-28 bg-green-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="text-green-200 font-semibold text-sm uppercase tracking-wide mb-3">Stories of Hope</p>
+                <h2 class="text-3xl lg:text-4xl font-semibold tracking-tight text-white mb-4">Voices from Our Community</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                    </div>
+                    <p class="text-white text-base mb-6 leading-relaxed">"WECARE Jamaica didn't just rebuild our house – they rebuilt our hope. My children have a safe place to sleep again."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white font-semibold">M</div>
+                        <div>
+                            <p class="text-white font-medium text-sm">Maria Thompson</p>
+                            <p class="text-green-200 text-xs">Kingston Parish</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                    </div>
+                    <p class="text-white text-base mb-6 leading-relaxed">"The volunteers came with tools and left with our gratitude. They treated us like family, not charity cases."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white font-semibold">D</div>
+                        <div>
+                            <p class="text-white font-medium text-sm">David Brown</p>
+                            <p class="text-green-200 text-xs">St. Andrew</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                    </div>
+                    <p class="text-white text-base mb-6 leading-relaxed">"My farm was destroyed. WECARE helped me replant and even taught me new techniques. I'm producing more than before!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white font-semibold">P</div>
+                        <div>
+                            <p class="text-white font-medium text-sm">Patricia Williams</p>
+                            <p class="text-green-200 text-xs">Portland Parish</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section (kept) -->
+    <section class="py-20 lg:py-28 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mx-auto text-center">
+                <div class="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mx-auto mb-8">
+                    <i data-lucide="mail" class="w-8 h-8 text-white"></i>
+                </div>
+                <h2 class="text-3xl lg:text-4xl font-semibold tracking-tight text-white mb-4">Stay Connected</h2>
+                <p class="text-gray-400 text-lg mb-8">Get updates on our progress and how your support is making a difference.</p>
+                <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                    <input type="email" placeholder="Enter your email" class="flex-1 px-5 py-4 rounded-full bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 text-base">
+                    <button type="submit" class="px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-medium rounded-full transition-all hover:shadow-lg hover:shadow-green-600/30 text-base">
+                        Subscribe
+                    </button>
+                </form>
+                <p class="text-gray-500 text-xs mt-4">By subscribing, you agree to our Privacy Policy</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
+                <!-- Logo & Description -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="relative w-10 h-10 rounded-lg bg-white border border-green-700/30 shadow-sm flex items-center justify-center overflow-hidden">
+                            <div class="absolute inset-0 bg-green-700/5"></div>
+                            <!-- Heart logo from image -->
+                            <img
+                                src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg"
+                                alt="WeCare Jamaica heart logo"
+                                class="relative h-full w-full object-contain"
+                            >
+                        </div>
+                        <div class="-space-y-1">
+                            <span class="text-base sm:text-lg font-semibold text-white tracking-tight leading-snug">WECARE</span>
+                            <span class="text-xs font-medium text-green-400 tracking-[0.18em] uppercase">Jamaica</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-base mb-4 max-w-sm leading-relaxed">
+                        WECARE Jamaica — Registered 501(c)(3) nonprofit. Rebuilding homes, restoring hope, and reviving communities across Jamaica.
+                    </p>
+                    <p class="text-gray-500 text-sm mb-6">
+                        Donation Drives • Transparency • Impact Reports
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-green-700 rounded-full flex items-center justify-center transition-colors">
+                            <i data-lucide="facebook" class="w-5 h-5 text-gray-400 hover:text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-green-700 rounded-full flex items-center justify-center transition-colors">
+                            <i data-lucide="twitter" class="w-5 h-5 text-gray-400 hover:text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-green-700 rounded-full flex items-center justify-center transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5 text-gray-400 hover:text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-green-700 rounded-full flex items-center justify-center transition-colors">
+                            <i data-lucide="youtube" class="w-5 h-5 text-gray-400 hover:text-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white text-base transition-colors">Home</a></li>
+                        <li><a href="#mission" class="text-gray-400 hover:text-white text-base transition-colors">Our Mission</a></li>
+                        <li><a href="#programs" class="text-gray-400 hover:text-white text-base transition-colors">What We Do</a></li>
+                        <li><a href="#volunteer" class="text-gray-400 hover:text-white text-base transition-colors">Volunteer</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-white text-base transition-colors">Photos &amp; Videos</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Support</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white text-base transition-colors">Donate</a></li>
+                        <li><a href="#volunteer" class="text-gray-400 hover:text-white text-base transition-colors">Volunteer</a></li>
+                        <li><a href="#impact-map" class="text-gray-400 hover:text-white text-base transition-colors">Impact Map</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white text-base transition-colors">Gift Catalog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white text-base transition-colors">Impact Reports</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-green-500 mt-0.5"></i>
+                            <span class="text-gray-400 text-base">info@wecarejamaica.org</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-green-500"></i>
+                            <span class="text-gray-400 text-base">+1 (876) 555-0123</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-green-500 mt-0.5"></i>
+                            <span class="text-gray-400 text-base">Kingston, Jamaica</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-gray-500 text-sm">© 2025 WECARE Jamaica. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors">Terms of Service</a>
+                    <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons({ attrs: { strokeWidth: 1.5 } });
+    </script>
+</body>
 </html>

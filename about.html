@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - WeCare Jamaica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="relative w-10 h-10 rounded-lg bg-white border border-green-700/30 shadow-sm flex items-center justify-center overflow-hidden">
+                        <div class="absolute inset-0 bg-green-700/5"></div>
+                        <img
+                            src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg"
+                            alt="WeCare Jamaica heart logo"
+                            class="relative h-full w-full object-contain"
+                        >
+                    </div>
+                    <div class="-space-y-1">
+                        <span class="text-base sm:text-lg font-semibold text-green-800 tracking-tight leading-snug">WECARE</span>
+                        <span class="text-xs font-medium text-green-700 tracking-[0.18em] uppercase">Jamaica</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Home</a>
+                    <a href="about.html" class="text-sm font-medium text-green-700 transition-colors">About</a>
+                    <a href="programs.html" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Programs</a>
+                    <a href="volunteer.html" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Volunteer</a>
+                    <a href="donate.html" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Donate</a>
+                    <a href="contact.html" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Contact</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="flex items-center gap-4">
+                    <a href="donate.html" class="hidden sm:flex items-center gap-2 bg-green-700 hover:bg-green-800 text-white text-sm font-medium px-5 py-2.5 rounded-full transition-all hover:shadow-lg hover:shadow-green-700/25">
+                        <i data-lucide="heart" class="w-4 h-4"></i>
+                        Donate Now
+                    </a>
+                    <button class="md:hidden p-2">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-16 lg:pt-40 lg:pb-20 bg-gradient-to-br from-green-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto">
+                <div class="inline-flex items-center gap-2 bg-green-100 text-green-800 text-xs font-semibold px-4 py-2 rounded-full mb-6">
+                    <i data-lucide="heart" class="w-4 h-4"></i>
+                    About WECARE Jamaica
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold text-gray-900 tracking-tight leading-tight mb-6">
+                    Who We Are
+                </h1>
+                <p class="text-lg lg:text-xl text-gray-700 leading-relaxed mb-4">
+                    WECARE Jamaica is a U.S.-based 501(c)(3) nonprofit dedicated to providing rapid humanitarian aid and long-term rebuilding to Jamaican families affected by natural disasters.
+                </p>
+                <p class="text-xl lg:text-2xl font-semibold text-green-700 mt-8">
+                    We recover. We rebuild. We restore hope.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+                <!-- Mission -->
+                <div class="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 lg:p-10 border border-green-100">
+                    <div class="w-14 h-14 bg-green-600 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="target" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h2 class="text-2xl lg:text-3xl font-semibold text-gray-900 mb-4">Our Mission</h2>
+                    <p class="text-gray-700 text-base lg:text-lg leading-relaxed">
+                        To deliver immediate relief to families devastated by disasters and support the long-term rebuilding of communities across Jamaica.
+                    </p>
+                </div>
+
+                <!-- Vision -->
+                <div class="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 lg:p-10 border border-green-100">
+                    <div class="w-14 h-14 bg-green-600 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="eye" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h2 class="text-2xl lg:text-3xl font-semibold text-gray-900 mb-4">Our Vision</h2>
+                    <p class="text-gray-700 text-base lg:text-lg leading-relaxed">
+                        We envision a Jamaica where every family has a safe home, strong community support, and hope for a better future — even after the worst storms.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="py-20 lg:py-28 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <p class="text-green-700 font-semibold text-sm uppercase tracking-wide mb-3">Our Story</p>
+                <h2 class="text-3xl lg:text-4xl font-semibold text-gray-900 mb-6">Born from Crisis, Built on Hope</h2>
+            </div>
+
+            <div class="prose prose-lg max-w-none">
+                <p class="text-gray-700 text-base lg:text-lg leading-relaxed mb-6">
+                    In 2025, Hurricane Melissa tore through Jamaica, leaving thousands without homes, food, or basic necessities. The destruction was overwhelming — families lost everything in a single night.
+                </p>
+                <p class="text-gray-700 text-base lg:text-lg leading-relaxed mb-6">
+                    Our founders saw the devastation and knew one thing:
+                </p>
+                <p class="text-xl lg:text-2xl font-semibold text-green-700 text-center my-8 italic">
+                    "We could not wait for help. We had to be the help."
+                </p>
+                <p class="text-gray-700 text-base lg:text-lg leading-relaxed">
+                    From that moment, WECARE Jamaica was born — starting as an emergency response initiative, and growing into a long-term rebuilding movement.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Our Founders -->
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="text-green-700 font-semibold text-sm uppercase tracking-wide mb-3">Leadership</p>
+                <h2 class="text-3xl lg:text-4xl font-semibold text-gray-900 mb-4">Meet Our Founders</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Two passionate leaders united by a mission to rebuild Jamaica
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+                <!-- Founder 1 -->
+                <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition-all">
+                    <div class="h-64 bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center">
+                        <div class="w-32 h-32 bg-green-600 rounded-full flex items-center justify-center">
+                            <span class="text-white text-4xl font-semibold">CA</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-2">Chavez Allen</h3>
+                        <p class="text-green-700 font-medium mb-4">Founder</p>
+                        <p class="text-gray-600 text-sm uppercase tracking-wide mb-4">
+                            Day Trader, Fintech Investor & Business Strategist
+                        </p>
+                        <p class="text-gray-700 text-base leading-relaxed">
+                            Born and raised in Jamaica, Chavez never forgot his roots. After Hurricane Melissa, he committed himself to giving back to the country that raised him — using his experience, leadership, and resources to build a structured, impactful relief organization.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Founder 2 -->
+                <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition-all">
+                    <div class="h-64 bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center">
+                        <div class="w-32 h-32 bg-green-600 rounded-full flex items-center justify-center">
+                            <span class="text-white text-4xl font-semibold">SL</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-2">Shahiza Lugo</h3>
+                        <p class="text-green-700 font-medium mb-4">Co-Founder</p>
+                        <p class="text-gray-600 text-sm uppercase tracking-wide mb-4">
+                            Registered Nurse, Mental Health Advocate, Humanitarian Organizer
+                        </p>
+                        <p class="text-gray-700 text-base leading-relaxed">
+                            Shahiza brings deep medical knowledge, crisis management, and community leadership to WECARE Jamaica. She ensures every shipment, volunteer, and distribution effort is organized, ethical, and impactful. Her compassion and structure guide our entire operation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="py-20 lg:py-28 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="text-green-700 font-semibold text-sm uppercase tracking-wide mb-3">What Drives Us</p>
+                <h2 class="text-3xl lg:text-4xl font-semibold text-gray-900 mb-4">Our Values</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Value 1 -->
+                <div class="bg-white rounded-2xl p-6 lg:p-8 border border-gray-200 hover:border-green-200 hover:shadow-lg transition-all">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="heart" class="w-6 h-6 text-green-700"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Compassion</h3>
+                    <p class="text-gray-600 text-base">Every family deserves care and dignity.</p>
+                </div>
+
+                <!-- Value 2 -->
+                <div class="bg-white rounded-2xl p-6 lg:p-8 border border-gray-200 hover:border-green-200 hover:shadow-lg transition-all">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="users" class="w-6 h-6 text-green-700"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Community</h3>
+                    <p class="text-gray-600 text-base">Together, we rebuild stronger.</p>
+                </div>
+
+                <!-- Value 3 -->
+                <div class="bg-white rounded-2xl p-6 lg:p-8 border border-gray-200 hover:border-green-200 hover:shadow-lg transition-all">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="shield-check" class="w-6 h-6 text-green-700"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Integrity</h3>
+                    <p class="text-gray-600 text-base">Every dollar and every donation is used with purpose.</p>
+                </div>
+
+                <!-- Value 4 -->
+                <div class="bg-white rounded-2xl p-6 lg:p-8 border border-gray-200 hover:border-green-200 hover:shadow-lg transition-all">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="zap" class="w-6 h-6 text-green-700"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Rapid Response</h3>
+                    <p class="text-gray-600 text-base">When disaster strikes, we move immediately.</p>
+                </div>
+
+                <!-- Value 5 -->
+                <div class="bg-white rounded-2xl p-6 lg:p-8 border border-gray-200 hover:border-green-200 hover:shadow-lg transition-all">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="sun" class="w-6 h-6 text-green-700"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Hope</h3>
+                    <p class="text-gray-600 text-base">We rebuild more than homes — we restore futures.</p>
+                </div>
+
+                <!-- Value 6 (Transparency) -->
+                <div class="bg-white rounded-2xl p-6 lg:p-8 border border-gray-200 hover:border-green-200 hover:shadow-lg transition-all">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="eye" class="w-6 h-6 text-green-700"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Transparency</h3>
+                    <p class="text-gray-600 text-base">Open reporting on every donation and action.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Status -->
+    <section class="py-20 lg:py-28 bg-green-700">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-8">
+                <i data-lucide="badge-check" class="w-8 h-8 text-green-700"></i>
+            </div>
+            <h2 class="text-3xl lg:text-4xl font-semibold text-white mb-6">Our Status</h2>
+            <p class="text-green-100 text-lg lg:text-xl leading-relaxed mb-8">
+                WECARE Jamaica is a registered <span class="font-semibold text-white">501(c)(3) nonprofit organization</span> based in the United States, fully committed to supporting Jamaica through disaster relief, rebuilding, and community development.
+            </p>
+            <a href="transparency.html" class="inline-flex items-center gap-2 bg-white text-green-700 font-medium px-8 py-4 rounded-full hover:bg-green-50 transition-all text-base">
+                View Our Transparency Report
+                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl lg:text-4xl font-semibold text-gray-900 mb-6">Join Our Mission</h2>
+            <p class="text-gray-600 text-lg mb-10">
+                Whether you donate, volunteer, or spread the word — you become part of rebuilding Jamaica.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="donate.html" class="inline-flex items-center justify-center gap-2 bg-green-700 hover:bg-green-800 text-white font-medium px-8 py-4 rounded-full transition-all hover:shadow-lg hover:shadow-green-700/25 text-base">
+                    <i data-lucide="heart" class="w-5 h-5"></i>
+                    Donate Now
+                </a>
+                <a href="volunteer.html" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-green-700 font-medium px-8 py-4 rounded-full border-2 border-green-700 transition-all text-base">
+                    <i data-lucide="users" class="w-5 h-5"></i>
+                    Become a Volunteer
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
+                <!-- Logo & Description -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="relative w-10 h-10 rounded-lg bg-white border border-green-700/30 shadow-sm flex items-center justify-center overflow-hidden">
+                            <div class="absolute inset-0 bg-green-700/5"></div>
+                            <img
+                                src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg"
+                                alt="WeCare Jamaica heart logo"
+                                class="relative h-full w-full object-contain"
+                            >
+                        </div>
+                        <div class="-space-y-1">
+                            <span class="text-base sm:text-lg font-semibold text-white tracking-tight leading-snug">WECARE</span>
+                            <span class="text-xs font-medium text-green-400 tracking-[0.18em] uppercase">Jamaica</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-base mb-4 max-w-sm leading-relaxed">
+                        WECARE Jamaica — Registered 501(c)(3) nonprofit. Rebuilding homes, restoring hope, and reviving communities across Jamaica.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-green-700 rounded-full flex items-center justify-center transition-colors">
+                            <i data-lucide="facebook" class="w-5 h-5 text-gray-400 hover:text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-green-700 rounded-full flex items-center justify-center transition-colors">
+                            <i data-lucide="twitter" class="w-5 h-5 text-gray-400 hover:text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-green-700 rounded-full flex items-center justify-center transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5 text-gray-400 hover:text-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white text-base transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white text-base transition-colors">About</a></li>
+                        <li><a href="programs.html" class="text-gray-400 hover:text-white text-base transition-colors">Programs</a></li>
+                        <li><a href="impact.html" class="text-gray-400 hover:text-white text-base transition-colors">Impact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Get Involved -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Get Involved</h4>
+                    <ul class="space-y-3">
+                        <li><a href="donate.html" class="text-gray-400 hover:text-white text-base transition-colors">Donate</a></li>
+                        <li><a href="volunteer.html" class="text-gray-400 hover:text-white text-base transition-colors">Volunteer</a></li>
+                        <li><a href="transparency.html" class="text-gray-400 hover:text-white text-base transition-colors">Transparency</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-green-500 mt-0.5"></i>
+                            <span class="text-gray-400 text-base">info@wecarejamaica.org</span>
+                        </li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white text-base transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-500 text-sm">© 2025 WECARE Jamaica. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons({ attrs: { strokeWidth: 1.5 } });
+    </script>
+</body>
+</html>
