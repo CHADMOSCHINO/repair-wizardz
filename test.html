@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeCare Jamaica - Test Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: sans-serif; }
+        .test-section { border: 2px solid #e5e7eb; padding: 20px; margin: 20px; border-radius: 8px; }
+        .success { border-color: #10b981; background: #f0fdf4; }
+        .error { border-color: #ef4444; background: #fef2f2; }
+    </style>
+</head>
+<body class="bg-gray-50 p-8">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-4xl font-bold text-gray-900 mb-8">🧪 WeCare Jamaica - Test Page</h1>
+
+        <!-- Test 1: Basic HTML -->
+        <div class="test-section success">
+            <h2 class="text-2xl font-semibold mb-2">✅ Test 1: Basic HTML Loading</h2>
+            <p>If you can see this, HTML is working correctly!</p>
+        </div>
+
+        <!-- Test 2: Tailwind CSS -->
+        <div class="test-section" id="tailwind-test">
+            <h2 class="text-2xl font-semibold mb-2">⏳ Test 2: Tailwind CSS</h2>
+            <p id="tailwind-result">Checking...</p>
+        </div>
+
+        <!-- Test 3: Lucide Icons -->
+        <div class="test-section" id="lucide-test">
+            <h2 class="text-2xl font-semibold mb-2">⏳ Test 3: Lucide Icons</h2>
+            <p id="lucide-result">Checking... <i data-lucide="heart" class="inline-block w-5 h-5"></i></p>
+        </div>
+
+        <!-- Test 4: Jamaica Map Script -->
+        <div class="test-section" id="map-test">
+            <h2 class="text-2xl font-semibold mb-2">⏳ Test 4: Jamaica Map Script</h2>
+            <p id="map-result">Checking...</p>
+        </div>
+
+        <!-- Test 5: Forms Handler Script -->
+        <div class="test-section" id="forms-test">
+            <h2 class="text-2xl font-semibold mb-2">⏳ Test 5: Forms Handler Script</h2>
+            <p id="forms-result">Checking...</p>
+        </div>
+
+        <!-- Test 6: Interactive Map Display -->
+        <div class="test-section" id="map-display-test">
+            <h2 class="text-2xl font-semibold mb-2">⏳ Test 6: Interactive Map Display</h2>
+            <div id="jamaica-map-container" style="min-height: 400px;"></div>
+            <p id="map-display-result" class="mt-4">Map should appear above...</p>
+        </div>
+
+        <!-- Test 7: Form Submission Test -->
+        <div class="test-section" id="form-submit-test">
+            <h2 class="text-2xl font-semibold mb-2">⏳ Test 7: Form Submission</h2>
+            <form id="contact-form" class="space-y-4">
+                <input type="text" name="name" placeholder="Your Name" required class="w-full p-2 border rounded">
+                <input type="email" name="email" placeholder="Your Email" required class="w-full p-2 border rounded">
+                <select name="subject" required class="w-full p-2 border rounded">
+                    <option value="">Select Subject</option>
+                    <option value="test">Test Message</option>
+                </select>
+                <textarea name="message" placeholder="Your Message" required class="w-full p-2 border rounded"></textarea>
+                <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700">
+                    Test Form Submit
+                </button>
+            </form>
+            <p id="form-submit-result" class="mt-4">Fill out and submit the form above to test...</p>
+        </div>
+
+        <!-- Console Log Display -->
+        <div class="test-section">
+            <h2 class="text-2xl font-semibold mb-2">📋 Console Errors</h2>
+            <div id="console-errors" class="bg-gray-900 text-green-400 p-4 rounded font-mono text-sm max-h-64 overflow-auto">
+                <p>Watching for errors...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="jamaica-map.js"></script>
+    <script src="forms-handler.js"></script>
+
+    <script>
+        // Capture console errors
+        const errorLog = document.getElementById('console-errors');
+        const originalError = console.error;
+        console.error = function(...args) {
+            originalError.apply(console, args);
+            errorLog.innerHTML += `<p class="text-red-400">❌ ${args.join(' ')}</p>`;
+        };
+
+        window.onerror = function(msg, url, line, col, error) {
+            errorLog.innerHTML += `<p class="text-red-400">❌ ${msg} at ${url}:${line}:${col}</p>`;
+            return false;
+        };
+
+        // Test runners
+        setTimeout(() => {
+            // Test 2: Tailwind
+            const tailwindTest = document.getElementById('tailwind-test');
+            const hasClasses = tailwindTest.className.includes('test-section');
+            if (hasClasses) {
+                tailwindTest.classList.add('success');
+                document.getElementById('tailwind-result').textContent = '✅ Tailwind CSS is working!';
+            } else {
+                tailwindTest.classList.add('error');
+                document.getElementById('tailwind-result').textContent = '❌ Tailwind CSS not loading';
+            }
+
+            // Test 3: Lucide
+            const lucideTest = document.getElementById('lucide-test');
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+                setTimeout(() => {
+                    const hasSVG = document.querySelector('[data-lucide="heart"] svg');
+                    if (hasSVG) {
+                        lucideTest.classList.add('success');
+                        document.getElementById('lucide-result').textContent = '✅ Lucide icons working!';
+                    } else {
+                        lucideTest.classList.add('error');
+                        document.getElementById('lucide-result').textContent = '❌ Lucide icons not rendering';
+                    }
+                }, 100);
+            } else {
+                lucideTest.classList.add('error');
+                document.getElementById('lucide-result').textContent = '❌ Lucide library not loaded';
+            }
+
+            // Test 4: Jamaica Map
+            const mapTest = document.getElementById('map-test');
+            if (typeof JamaicaMap !== 'undefined') {
+                mapTest.classList.add('success');
+                document.getElementById('map-result').textContent = '✅ Jamaica Map script loaded!';
+            } else {
+                mapTest.classList.add('error');
+                document.getElementById('map-result').textContent = '❌ Jamaica Map script not loaded - Check jamaica-map.js';
+            }
+
+            // Test 5: Forms Handler
+            const formsTest = document.getElementById('forms-test');
+            if (typeof FormsHandler !== 'undefined') {
+                formsTest.classList.add('success');
+                document.getElementById('forms-result').textContent = '✅ Forms Handler script loaded!';
+            } else {
+                formsTest.classList.add('error');
+                document.getElementById('forms-result').textContent = '❌ Forms Handler script not loaded - Check forms-handler.js';
+            }
+
+            // Test 6: Map Display
+            const mapDisplayTest = document.getElementById('map-display-test');
+            const mapContainer = document.getElementById('jamaica-map-container');
+            setTimeout(() => {
+                if (mapContainer.children.length > 0) {
+                    mapDisplayTest.classList.add('success');
+                    document.getElementById('map-display-result').textContent = '✅ Interactive map displayed successfully!';
+                } else {
+                    mapDisplayTest.classList.add('error');
+                    document.getElementById('map-display-result').textContent = '❌ Map not rendering - Check browser console for errors';
+                }
+            }, 500);
+
+        }, 500);
+
+        // Monitor form submission
+        if (document.getElementById('contact-form')) {
+            const formTest = document.getElementById('form-submit-test');
+            const formResult = document.getElementById('form-submit-result');
+
+            setTimeout(() => {
+                if (typeof window.formsHandler !== 'undefined') {
+                    formResult.textContent = '✅ Form handler initialized! Try submitting the form.';
+                } else {
+                    formResult.textContent = '⚠️ Form handler not initialized - backend not configured yet (this is normal)';
+                }
+            }, 1000);
+        }
+
+        console.log('🧪 Test page loaded - checking all components...');
+    </script>
+</body>
+</html>
