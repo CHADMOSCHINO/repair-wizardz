@@ -7,7 +7,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>body { font-family: 'Inter', sans-serif; }</style>
+    <script src="jamaica-map.js" defer></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .parish-marker.selected .parish-circle {
+            stroke-width: 4;
+            filter: drop-shadow(0 0 8px rgba(21, 128, 61, 0.6));
+        }
+    </style>
 </head>
 <body class="bg-white text-gray-900">
     <nav class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md z-50 border-b border-gray-100">
@@ -47,13 +54,8 @@
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-semibold text-gray-900 mb-8 text-center">Interactive Impact Map</h2>
-            <div class="rounded-2xl border-2 border-gray-300 bg-gray-50 h-96 flex items-center justify-center">
-                <div class="text-center">
-                    <i data-lucide="map" class="w-24 h-24 text-green-600 mx-auto mb-4"></i>
-                    <p class="text-gray-600">Interactive Jamaica map showing parishes served, areas impacted, and aid delivered</p>
-                    <p class="text-sm text-gray-500 mt-2">(Map integration coming soon)</p>
-                </div>
-            </div>
+            <p class="text-gray-600 text-center mb-8 max-w-2xl mx-auto">Click on any parish to see detailed impact information, aid distribution, and rebuilding progress.</p>
+            <div id="jamaica-map-container"></div>
         </div>
     </section>
 
