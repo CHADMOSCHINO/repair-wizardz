@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - WeCare Jamaica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="relative w-10 h-10 rounded-lg bg-white border border-green-700/30 shadow-sm flex items-center justify-center overflow-hidden">
+                        <div class="absolute inset-0 bg-green-700/5"></div>
+                        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg" alt="WeCare Jamaica heart logo" class="relative h-full w-full object-contain">
+                    </div>
+                    <div class="-space-y-1">
+                        <span class="text-base sm:text-lg font-semibold text-green-800 tracking-tight leading-snug">WECARE</span>
+                        <span class="text-xs font-medium text-green-700 tracking-[0.18em] uppercase">Jamaica</span>
+                    </div>
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Home</a>
+                    <a href="about.html" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">About</a>
+                    <a href="programs.html" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Programs</a>
+                    <a href="volunteer.html" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Volunteer</a>
+                    <a href="donate.html" class="text-sm font-medium text-green-700 transition-colors">Donate</a>
+                    <a href="contact.html" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Contact</a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button class="md:hidden p-2"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[60vh] flex items-center pt-16 lg:pt-20 bg-gradient-to-br from-green-700 to-green-900">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 text-center">
+            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white text-xs font-medium px-4 py-2 rounded-full mb-6 border border-white/20">
+                <i data-lucide="heart" class="w-4 h-4"></i>
+                Make a Difference Today
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white tracking-tight leading-tight mb-6 max-w-3xl mx-auto">
+                Your Donation Changes Lives
+            </h1>
+            <p class="text-lg lg:text-xl text-green-100 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Every donation directly supports Jamaican families recovering from disaster. Your impact is immediate, transparent, and life-changing.
+            </p>
+        </div>
+    </section>
+
+    <!-- Gift Catalog -->
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="text-green-700 font-semibold text-sm uppercase tracking-wide mb-3">Gift Catalog</p>
+                <h2 class="text-3xl lg:text-4xl font-semibold text-gray-900 mb-4">Choose a Gift That Goes Straight to Families in Need</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Select a specific gift to see exactly how your donation helps</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Gift 1 -->
+                <div class="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 border border-gray-200 hover:shadow-xl hover:border-green-300 transition-all">
+                    <div class="w-14 h-14 bg-green-600 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="shopping-bag" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <div class="flex items-baseline gap-2 mb-3">
+                        <span class="text-4xl font-semibold text-green-700">$25</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Feed a Family for 1 Week</h3>
+                    <p class="text-gray-600 mb-6">Rice, canned goods, water, and essential food supplies for a family of four.</p>
+                    <button class="w-full bg-green-700 hover:bg-green-800 text-white font-medium px-6 py-3 rounded-full transition-all">Donate $25</button>
+                </div>
+
+                <!-- Gift 2 -->
+                <div class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 border border-gray-200 hover:shadow-xl hover:border-blue-300 transition-all">
+                    <div class="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="droplet" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <div class="flex items-baseline gap-2 mb-3">
+                        <span class="text-4xl font-semibold text-blue-700">$40</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Hygiene & Essentials Kit</h3>
+                    <p class="text-gray-600 mb-6">Soap, toothpaste, sanitary products, towels, baby wipes, and hygiene basics.</p>
+                    <button class="w-full bg-blue-700 hover:bg-blue-800 text-white font-medium px-6 py-3 rounded-full transition-all">Donate $40</button>
+                </div>
+
+                <!-- Gift 3 -->
+                <div class="bg-gradient-to-br from-red-50 to-white rounded-2xl p-8 border border-gray-200 hover:shadow-xl hover:border-red-300 transition-all">
+                    <div class="w-14 h-14 bg-red-600 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="heart-pulse" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <div class="flex items-baseline gap-2 mb-3">
+                        <span class="text-4xl font-semibold text-red-700">$75</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Medical Emergency Kit</h3>
+                    <p class="text-gray-600 mb-6">First aid, bandages, medications, disinfectants, and emergency medical supplies.</p>
+                    <button class="w-full bg-red-700 hover:bg-red-800 text-white font-medium px-6 py-3 rounded-full transition-all">Donate $75</button>
+                </div>
+
+                <!-- Gift 4 -->
+                <div class="bg-gradient-to-br from-orange-50 to-white rounded-2xl p-8 border border-gray-200 hover:shadow-xl hover:border-orange-300 transition-all">
+                    <div class="w-14 h-14 bg-orange-600 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="hammer" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <div class="flex items-baseline gap-2 mb-3">
+                        <span class="text-4xl font-semibold text-orange-700">$150</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Tools for Rebuilding</h3>
+                    <p class="text-gray-600 mb-6">Shovels, hammers, nails, and essential construction tools for rebuilding.</p>
+                    <button class="w-full bg-orange-700 hover:bg-orange-800 text-white font-medium px-6 py-3 rounded-full transition-all">Donate $150</button>
+                </div>
+
+                <!-- Gift 5 -->
+                <div class="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-8 border border-gray-200 hover:shadow-xl hover:border-purple-300 transition-all">
+                    <div class="w-14 h-14 bg-purple-600 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="home" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <div class="flex items-baseline gap-2 mb-3">
+                        <span class="text-4xl font-semibold text-purple-700">$300</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Rebuild a Room</h3>
+                    <p class="text-gray-600 mb-6">Materials and staffing to rebuild a damaged room in a family's home.</p>
+                    <button class="w-full bg-purple-700 hover:bg-purple-800 text-white font-medium px-6 py-3 rounded-full transition-all">Donate $300</button>
+                </div>
+
+                <!-- Gift 6 -->
+                <div class="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 border-2 border-green-600 hover:shadow-2xl transition-all relative overflow-hidden">
+                    <div class="absolute top-4 right-4 bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded-full">Popular</div>
+                    <div class="w-14 h-14 bg-green-600 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="package-check" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <div class="flex items-baseline gap-2 mb-3">
+                        <span class="text-4xl font-semibold text-green-700">$500</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Full Disaster Relief Package</h3>
+                    <p class="text-gray-600 mb-6">Complete support: food, water, hygiene, medical supplies, and essential aid.</p>
+                    <button class="w-full bg-green-700 hover:bg-green-800 text-white font-medium px-6 py-3 rounded-full transition-all">Donate $500</button>
+                </div>
+            </div>
+
+            <!-- Custom Amount -->
+            <div class="mt-12 text-center">
+                <p class="text-gray-600 mb-4">Want to give a different amount?</p>
+                <button class="inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-900 font-medium px-8 py-4 rounded-full transition-all text-base">
+                    <i data-lucide="dollar-sign" class="w-5 h-5"></i>
+                    Custom Donation Amount
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsor a Family -->
+    <section class="py-20 lg:py-28 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mx-auto mb-8">
+                <i data-lucide="users" class="w-8 h-8 text-white"></i>
+            </div>
+            <h2 class="text-3xl lg:text-4xl font-semibold text-gray-900 mb-6">Sponsor a Family</h2>
+            <p class="text-gray-700 text-lg mb-8 leading-relaxed">
+                Give monthly support to a family rebuilding their lives. Includes food, essentials, school support, and basic needs.
+            </p>
+            <div class="bg-white rounded-2xl p-8 lg:p-10 border border-gray-200 mb-8">
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <p class="text-3xl font-semibold text-green-700 mb-2">$50/mo</p>
+                        <p class="text-gray-600 text-sm">Basic support package</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-3xl font-semibold text-green-700 mb-2">$100/mo</p>
+                        <p class="text-gray-600 text-sm">Full family support</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-3xl font-semibold text-green-700 mb-2">$250/mo</p>
+                        <p class="text-gray-600 text-sm">Extended family care</p>
+                    </div>
+                </div>
+            </div>
+            <button class="inline-flex items-center gap-2 bg-green-700 hover:bg-green-800 text-white font-medium px-8 py-4 rounded-full transition-all hover:shadow-lg hover:shadow-green-700/25 text-base">
+                <i data-lucide="heart" class="w-5 h-5"></i>
+                Become a Monthly Sponsor
+            </button>
+        </div>
+    </section>
+
+    <!-- In-Kind Donations -->
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-semibold text-gray-900 mb-4">In-Kind Donations</h2>
+                <p class="text-gray-600 text-lg">We accept physical donations at designated locations</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+                <div class="bg-gray-50 rounded-2xl p-6 text-center border border-gray-200">
+                    <i data-lucide="utensils" class="w-8 h-8 text-green-700 mx-auto mb-3"></i>
+                    <p class="text-gray-700 font-medium">Food</p>
+                </div>
+                <div class="bg-gray-50 rounded-2xl p-6 text-center border border-gray-200">
+                    <i data-lucide="shirt" class="w-8 h-8 text-green-700 mx-auto mb-3"></i>
+                    <p class="text-gray-700 font-medium">Clothing</p>
+                </div>
+                <div class="bg-gray-50 rounded-2xl p-6 text-center border border-gray-200">
+                    <i data-lucide="droplet" class="w-8 h-8 text-green-700 mx-auto mb-3"></i>
+                    <p class="text-gray-700 font-medium">Hygiene Supplies</p>
+                </div>
+                <div class="bg-gray-50 rounded-2xl p-6 text-center border border-gray-200">
+                    <i data-lucide="stethoscope" class="w-8 h-8 text-green-700 mx-auto mb-3"></i>
+                    <p class="text-gray-700 font-medium">Medical Items</p>
+                </div>
+                <div class="bg-gray-50 rounded-2xl p-6 text-center border border-gray-200">
+                    <i data-lucide="book-open" class="w-8 h-8 text-green-700 mx-auto mb-3"></i>
+                    <p class="text-gray-700 font-medium">School Supplies</p>
+                </div>
+            </div>
+
+            <div class="mt-10 text-center">
+                <p class="text-gray-600 mb-4">Drop-off locations posted monthly</p>
+                <a href="contact.html" class="inline-flex items-center gap-2 text-green-700 font-medium hover:text-green-800 transition-colors">
+                    Contact us for drop-off locations
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transparency Promise -->
+    <section class="py-20 lg:py-28 bg-green-700">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-8">
+                <i data-lucide="shield-check" class="w-8 h-8 text-green-700"></i>
+            </div>
+            <h2 class="text-3xl lg:text-4xl font-semibold text-white mb-6">Our Transparency Promise</h2>
+            <p class="text-green-100 text-lg mb-8 leading-relaxed">
+                85% of donations go directly to aid. Every dollar is tracked and reported.
+            </p>
+            <a href="transparency.html" class="inline-flex items-center gap-2 bg-white text-green-700 font-medium px-8 py-4 rounded-full hover:bg-green-50 transition-all text-base">
+                See Our Financial Reports
+                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
+                <div class="lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="relative w-10 h-10 rounded-lg bg-white border border-green-700/30 shadow-sm flex items-center justify-center overflow-hidden">
+                            <div class="absolute inset-0 bg-green-700/5"></div>
+                            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg" alt="WeCare Jamaica" class="relative h-full w-full object-contain">
+                        </div>
+                        <div class="-space-y-1">
+                            <span class="text-base sm:text-lg font-semibold text-white tracking-tight leading-snug">WECARE</span>
+                            <span class="text-xs font-medium text-green-400 tracking-[0.18em] uppercase">Jamaica</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-base mb-4 max-w-sm leading-relaxed">WECARE Jamaica — Registered 501(c)(3) nonprofit. Rebuilding homes, restoring hope, and reviving communities across Jamaica.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white text-base transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white text-base transition-colors">About</a></li>
+                        <li><a href="programs.html" class="text-gray-400 hover:text-white text-base transition-colors">Programs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Get Involved</h4>
+                    <ul class="space-y-3">
+                        <li><a href="donate.html" class="text-gray-400 hover:text-white text-base transition-colors">Donate</a></li>
+                        <li><a href="volunteer.html" class="text-gray-400 hover:text-white text-base transition-colors">Volunteer</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-3">
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white text-base transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-500 text-sm">© 2025 WECARE Jamaica. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons({ attrs: { strokeWidth: 1.5 } });
+    </script>
+</body>
+</html>
